@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+class resource
+{
+private:
+    int id;
+    int *data;
+
+public:
+    resource(int i, int val) : id(i)
+    {
+        data = new int(val);
+        cout << "resource " << id << "located at " << data << " created with value " << *data << endl;
+    }
+    ~resource()
+    {
+        cout << "resource" << id << "relased" << endl;
+        delete data;
+    }
+    void show()
+    {
+        cout << "resource " << id << ":" << *data << endl;
+    }
+};
+void function(){
+    resource local(1, 100);
+    local.show();
+}
+int main()
+{
+   resource r1(2, 200);
+    r1.show();
+    function();
+    return 0;
+}

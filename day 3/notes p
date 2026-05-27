@@ -1,0 +1,35 @@
+#include<iostream.h>
+#include<cstring>
+using namespace std ;
+
+class student {
+    public :
+    char * name;
+    int age;
+
+    student(const char* n,int a)
+    {
+        age=a;
+        name= new char[strlen(n)+1];
+        strcpy(name,n);
+
+    }
+
+    student( const student&s)
+    {
+       age=s.age;
+       name=new char[strlen(s.name)+1}];
+       strcpy(name,s.name);
+       cout<<"copy construct called!"<<endl;
+
+    }
+    void display()
+    {
+        cout<<name<<"("<< age << ")" <<endl;
+
+    }
+    student()
+    {
+        delete[]name;
+    }
+};

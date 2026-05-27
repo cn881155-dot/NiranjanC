@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+class Demo{
+    public:
+     int id;
+     Demo(int i) {
+         id=i;
+         cout<<"Constructor called for object"<<id<<endl;
+     }
+     ~Demo() {
+         cout<<"Destructorcalled for object"<<id<<endl;
+     }
+};
+int main() {
+    cout<<"---- stack object----"<<endl;
+    Demo stackckObj(1);
+    cout<<"\n---Heap object---"<<endl;
+    Demo* heapObj = new Demo(2);
+    cout<<"\nStck object goes out of the scope automatically..."<<endl;
+    cout<<"\nEnd of main()"<<endl;
+    return 0;
+}
