@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+class Demo {
+ public:
+ void show(int a) { cout<<"One int:"<<a<<endl;}
+ void show(int a,int b) { cout<<"Two ints:"<<a<<" "<<b<<endl;}
+ void display(int a,int b=0) { cout<<"Display:"<<a<<","<<(b? to_string(b):"default")<<endl;}
+};
+int main() {
+    Demo d;
+    d.show(5);
+    d.show(5, 10);
+    d.display(5);
+    d.display(5, 10);
+    return 0;
+}
