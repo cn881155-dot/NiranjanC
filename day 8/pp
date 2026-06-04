@@ -1,0 +1,13 @@
+#include<fstream>
+using namespace std;
+ios::in
+ios::out
+ios::app
+ios::ate
+ios::trunc
+ios::binary
+ifstream file1("date.txt");
+ofstream file2("date.txt");
+ofstream file3("data.txt",ios::app);
+ofstream file4("data.bin",ios::in | ios:out);
+ofstream file5("data.bin",ios::out | ios::binary);

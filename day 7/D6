@@ -1,0 +1,61 @@
+#include<iostream>
+#include<string>
+#include<vector>
+#include<algorithm>
+using namespace std;
+template<typename T>
+class ScoreManager {
+    private:
+        vector<T> scores;
+    public:
+        void addScore(T score) {
+            scores.push_back(score);
+        }
+        T getAverage() const {
+            if (scores.empty()) return T();
+            T sum = 0;
+            for(T score : scores) sum += score;
+            return sum / scores.size();
+        }
+        T getHighest() {
+            return *max_element(scores.begin(), scores.end());
+        }
+        T getLowest() {
+            return *min_element(scores.begin(), scores.end());
+        }
+        void displayAll() {
+            cout<<"Scores: ";
+            for(T s : scores) cout<<s<<" ";
+            cout<<endl;
+        }
+        int getCount() const {
+            return scores.size();
+        }
+};
+int main() {
+    ScoreManager<int> intScores;
+    intScores.addScore(85);
+    intScores.addScore(90);
+    intScores.addScore(78);
+    intScores.addScore(85);
+    intScores.addScore(90)
+    cout<<"===Math Scores(int)=== "<<endl;
+    mathScores.displayAll();
+    cout<<"Count: "<<mathScores.getCount()<<endl;
+    cout<<"Average: "<<mathScores.getAverage()<<endl;
+    cout<<"Highest: "<<mathScores.getHighest()<<endl;
+    cout<<"Lowest: "<<mathScores.getLowest()<<endl;
+    ScoreManager<double> scienceScores;
+    scienceScores.addScore(3.5);
+    scienceScores.addScore(4.0);
+    scienceScores.addScore(2.8);
+    cout<<"\n===Science Scores(double)=== "<<endl;
+    scienceScores.displayAll();
+    scienceScores.addScore(3.5);
+    scienceScores.addScore(4.0);
+    scienceScores.addScore(2.8);
+    cout<<"\n===Science Scores(double)=== "<<endl;
+    scienceScores.displayAll();
+    cout<<"Average: "<<scienceScores.getAverage()<<endl;
+    return 0;
+}
